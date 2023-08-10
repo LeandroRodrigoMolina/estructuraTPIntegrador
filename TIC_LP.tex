@@ -1,0 +1,87 @@
+\documentclass[a4paper,10pt]{article}
+
+% Paquetes requeridos
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{csquotes}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{graphicx}
+\usepackage[style=apa, backend=biber, natbib=true, language=spanish, url=true]{biblatex}
+\usepackage{tocloft} % Para personalizar el índice
+\usepackage[left=3.5cm,right=2.5cm,top=3.5cm,bottom=3.8cm]{geometry}
+\usepackage{setspace} % Espaciado
+\usepackage{titlesec} % Para personalizar los títulos
+\usepackage{fancyhdr} % Para encabezados y pies de página personalizados
+
+\addbibresource{referencias.bib}
+\DeclareLanguageMapping{spanish}{spanish-apa}
+% Configuraciones
+\setlength{\parskip}{6pt} % Espacio entre párrafos
+\setstretch{1.15} % Espacio entre líneas
+
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}} % Para puntos en el índice
+
+% Estilos para títulos y subtítulos
+\titleformat{\section}
+{\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\fontsize{11}{14}\bfseries}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+{\normalfont\fontsize{10.5}{13}\bfseries}{\thesubsubsection}{1em}{}
+
+% Configuración de fancyhdr
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\fancyhead[L]{\leftmark} % Sección en el encabezado izquierdo
+\fancyfoot[R]{\thepage} % Número de página en el pie derecho
+\renewcommand{\headrulewidth}{0.4pt} % Línea debajo del encabezado
+\renewcommand{\footrulewidth}{0pt}   % Sin línea encima del pie
+
+\usepackage[hypertexnames=false]{hyperref}
+
+% Inicio del documento
+\begin{document}
+% Carátula
+\begin{titlepage}
+	\centering
+	\vspace*{1.5cm}
+	\includegraphics[width=0.3\textwidth]{unerlogo.png} % <- Logo de la universidad
+	\linebreak
+	\vspace{0.5cm} % <- Espacio vertical después del logo
+	{\LARGE\bfseries Nombre de la Universidad\par}
+	{\Large Facultad de [nombre de la facultad]\par}
+	\vspace{0.5cm}
+	{\Large Carrera de [nombre de la carrera]\par}
+	\vspace{0.5cm}
+	{\Large [Nombre del primer alumno]\par}
+	{\Large [Nombre del segundo alumno]\par}
+	\vfill
+	{\large Fecha de presentación: \today\par}
+\end{titlepage}
+	
+	% Índice
+	\tableofcontents
+	\clearpage
+	% Índice de figuras
+	\listoffigures
+	\clearpage
+	
+	\section{Desarrollo de la actividad propuesta}
+	Aquí desarrollas el contenido principal del trabajo. \parencite{marquez2011metaversos}
+	
+	% Ejemplo de figura
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.5\textwidth]{uner.png}
+		\caption{Descripción de la figura}
+		\label{fig:ejemplo}
+	\end{figure}
+	
+	prueba springer  \cite{cheng2023metaverse}
+	
+	\pagebreak
+	\section{Conclusiones}
+	Presenta las conclusiones del trabajo.
+	\pagebreak
+	\printbibliography[heading=bibintoc]
+\end{document}
