@@ -11,7 +11,12 @@
 \usepackage[left=3.5cm,right=2.5cm,top=3.5cm,bottom=3.8cm]{geometry}
 \usepackage{setspace} % Espaciado
 \usepackage{titlesec} % Para personalizar los títulos
-\usepackage{fancyhdr} % Para encabezados y pies de página personalizados
+\usepackage{fancyhdr} % Para personalizar encabezados y pies de página
+\usepackage{newtxtext}
+
+\pagestyle{fancy}
+\fancyhf{} % Limpia encabezados y pies de página
+\renewcommand{\headrulewidth}{0pt} % Elimina la línea del encabezado
 
 \addbibresource{referencias.bib}
 \DeclareLanguageMapping{spanish}{spanish-apa}
@@ -25,45 +30,50 @@
 \titleformat{\section}
 {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
 \titleformat{\subsection}
-{\normalfont\fontsize{11}{14}\bfseries}{\thesubsection}{1em}{}
+{\normalfont\fontsize{10}{13}\bfseries}{\thesubsection}{1em}{}
 \titleformat{\subsubsection}
 {\normalfont\fontsize{10.5}{13}\bfseries}{\thesubsubsection}{1em}{}
 
-% Configuración de fancyhdr
-\pagestyle{fancy}
-\fancyhf{} % Limpia encabezados y pies de página
-\fancyhead[L]{\leftmark} % Sección en el encabezado izquierdo
-\fancyfoot[R]{\thepage} % Número de página en el pie derecho
-\renewcommand{\headrulewidth}{0.4pt} % Línea debajo del encabezado
-\renewcommand{\footrulewidth}{0pt}   % Sin línea encima del pie
-
-\usepackage[hypertexnames=false]{hyperref}
+\usepackage[hypertexnames=false, colorlinks=true, 
+linkcolor=blue, 
+citecolor=blue, 
+urlcolor=blue, 
+linkbordercolor={1 1 0}, 
+citebordercolor={1 1 0}, 
+urlbordercolor={1 1 0}, 
+filecolor=blue, 
+pdfborderstyle={/S/U/W 1}]{hyperref}
 
 % Inicio del documento
 \begin{document}
-% Carátula
-\begin{titlepage}
-	\centering
-	\vspace*{1.5cm}
-	\includegraphics[width=0.3\textwidth]{unerlogo.png} % <- Logo de la universidad
-	\linebreak
-	\vspace{0.5cm} % <- Espacio vertical después del logo
-	{\LARGE\bfseries Nombre de la Universidad\par}
-	{\Large Facultad de [nombre de la facultad]\par}
-	\vspace{0.5cm}
-	{\Large Carrera de [nombre de la carrera]\par}
-	\vspace{0.5cm}
-	{\Large [Nombre del primer alumno]\par}
-	{\Large [Nombre del segundo alumno]\par}
-	\vfill
-	{\large Fecha de presentación: \today\par}
-\end{titlepage}
+	\pagestyle{empty}
+	% Carátula
+	\begin{titlepage}
+		\centering
+		\vspace*{1.5cm}
+		\includegraphics[width=0.3\textwidth]{unerlogo.png}
+		\linebreak
+		{\fontsize{14}{17}\bfseries Título del Documento\par}
+		{\small [Nombre del primer alumno]\par}
+		{\small [Nombre del segundo alumno]\par}
+		{\normalsize [Nombre de la Universidad]\par}
+		{\normalsize Facultad de [nombre de la facultad]\par}
+		{\normalsize Carrera de [nombre de la carrera]\par}
+		{\small Correo electrónico de autor\par}
+		{\small Correo electrónico de autor\par}
+		
+		% Resumen y palabras clave con un pequeño desplazamiento hacia la izquierda
+		\hspace{-5cm}{\small \textbf{Abstract.} Resumen hasta 200 palabras. \par}
+		\hspace{-5.2cm}{\small \textbf{Keywords:} Máximo 5 palabras claves.\par}
+	\end{titlepage}
 	
 	% Índice
 	\tableofcontents
+	\thispagestyle{empty}
 	\clearpage
 	% Índice de figuras
 	\listoffigures
+	\thispagestyle{empty}
 	\clearpage
 	
 	\section{Desarrollo de la actividad propuesta}
@@ -78,6 +88,23 @@
 	\end{figure}
 	
 	prueba springer  \cite{cheng2023metaverse}
+	
+	\section{Introducción}
+	Esta es la introducción de nuestro documento. Aquí discutimos brevemente el propósito de este trabajo y ofrecemos un panorama general de lo que se discutirá en las siguientes secciones.
+	
+	\subsection{Contexto histórico}
+	Esta es una subsección donde hablamos del contexto histórico de nuestro tema. Es importante entender la historia para poder comprender completamente nuestro tema de estudio.
+	
+	\subsubsection{Europa en el siglo XIX}
+	En esta subsección hablamos de Europa durante el siglo XIX. Durante este período, Europa vio muchos cambios políticos, sociales y tecnológicos que sentaron las bases para el mundo moderno.
+	
+	El siglo XIX en Europa estuvo marcado por la Revolución Industrial, el surgimiento de los movimientos nacionalistas, y grandes avances en ciencia y tecnología. Además, las potencias europeas expandieron sus imperios coloniales, lo que tuvo un impacto profundo en la geopolítica global.
+	
+	\subsection{Importancia del estudio}
+	Aquí discutimos por qué es importante estudiar nuestro tema. Puede ser porque tiene relevancia actual, porque hay lagunas en la investigación existente, o simplemente porque es un área de interés personal.
+	
+	\section{Metodología}
+	En esta sección, describimos cómo llevamos a cabo nuestra investigación. Esto incluye los métodos que usamos, las fuentes que consultamos y cualquier otro detalle relevante que pueda interesar a nuestros lectores.
 	
 	\pagebreak
 	\section{Conclusiones}
